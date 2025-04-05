@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ruchi Arora | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background-color: #eab308;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      z-index: 1;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      right: -9px;
+      top: 70px;
+      border-radius: 50%;
+      z-index: 2;
+      background: #eab308;
+    }
+    
+    .timeline-left {
+      left: 0;
+      transform: translateX(-50px);
+    }
+    
+    .timeline-right {
+      left: 50%;
+      transform: translateX(50px);
+    }
+    
+    .timeline-right::after {
+      left: -12px;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .timeline-left .timeline-content {
+      border-left: 6px solid #eab308;
+    }
+    
+    .timeline-right .timeline-content {
+      border-right: 6px solid #eab308;
+    }
+    
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Responsive timeline */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-left, .timeline-right {
+        left: 0;
+      }
+      
+      .timeline-item::after {
+        left: 19px;
+        top: 15px;
+      }
+      
+      .timeline-left .timeline-content,
+      .timeline-right .timeline-content {
+        border-left: 6px solid #eab308;
+        border-right: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#f8faff] text-gray-800 scroll-smooth">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-xl font-semibold">Ruchi Arora</h1>
+      <nav class="space-x-6 text-sm font-medium">
+        <a href="#about" class="hover:text-yellow-500 transition">About</a>
+        <a href="#education" class="hover:text-yellow-500 transition">Education</a>
+        <a href="#work" class="hover:text-yellow-500 transition">Experience</a>
+        <a href="#projects" class="hover:text-yellow-500 transition">Projects</a>
+        <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 bg-gradient-to-r from-white to-yellow-100">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-1/2">
+        <h2 class="text-5xl font-bold leading-tight mb-6">Hello, my name is <br><span class="text-yellow-500">Ruchi Arora</span></h2>
+        <p class="text-lg text-gray-700 mb-6">Historian, researcher, and educator passionate about inclusive education and cultural storytelling.</p>
+        <div class="space-x-4">
+          <a href="#projects" class="bg-yellow-500 text-white px-5 py-2 rounded shadow hover:bg-yellow-600 transition">View Projects</a>
+          <a href="#contact" class="border border-gray-800 px-5 py-2 rounded hover:bg-gray-800 hover:text-white transition">Contact</a>
+        </div>
+      </div>
+      <div class="md:w-1/2 mt-10 md:mt-0">
+        <img src="https://i.ibb.co/yqvGpG5/hero-image.png" alt="Hero" class="w-full max-w-sm mx-auto drop-shadow-lg"/>
+      </div>
+    </div>
+  </section>
+    <!-- About Me -->
+    <section id="about" class="py-20 px-6 bg-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-6">About Me</h2>
+          <p class="text-lg text-gray-700 leading-relaxed">I'm a history enthusiast and educator from India with a flair for storytelling, inclusivity, and community engagement. My academic work combines pedagogy, South Asian studies, and innovation in historical teaching. I enjoy using research to create impactful learning experiences that uplift and inspire.</p>
+        </div>
+      </section>
+
+      
+<!-- EDUCATION with Animated Timeline -->
+<section id="education" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16">Education</h2>
+      
+      <div class="timeline">
+        <!-- UPenn -->
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h3 class="text-xl font-semibold">University of Pennsylvania</h3>
+            <p class="text-gray-600">M.S.Ed, 2024–25</p>
+            <p class="text-gray-700 mt-2">Focusing on education policy and international education development.</p>
+          </div>
+        </div>
+        
+        <!-- IGNOU MA -->
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3 class="text-xl font-semibold">IGNOU</h3>
+            <p class="text-gray-600">M.A. History, 2022–24</p>
+            <p class="text-gray-700 mt-2">Specialized in South Asian history with focus on cultural heritage.</p>
+          </div>
+        </div>
+        
+        <!-- IGNOU BA -->
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h3 class="text-xl font-semibold">IGNOU</h3>
+            <p class="text-gray-600">B.A. History, 2020–22</p>
+            <p class="text-gray-700 mt-2">Foundation in historical methods and global historical perspectives.</p>
+          </div>
+        </div>
+        
+        <!-- IIAD -->
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3 class="text-xl font-semibold">Indian Institute of Art & Design</h3>
+            <p class="text-gray-600">Diploma, 2018</p>
+            <p class="text-gray-700 mt-2">Studies in visual communication and design thinking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16">Highlighted Projects</h2>
+      <div class="space-y-14">
+        <!-- Project Card -->
+        <div class="md:flex bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-xl transition">
+          <img class="md:w-1/2 object-cover" src="https://i.ibb.co/M5NGPVy/project1.jpg" alt="Project 1">
+          <div class="md:w-1/2 p-6">
+            <h3 class="text-2xl font-semibold mb-2">History Career Lab</h3>
+            <p class="mb-4 text-gray-600">Introduced students to diverse historical careers through a hands-on workshop format.</p>
+            <a href="#" class="text-yellow-500 font-medium hover:underline">View Details →</a>
+          </div>
+        </div>
+
+        <div class="md:flex flex-row-reverse bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-xl transition">
+          <img class="md:w-1/2 object-cover" src="https://i.ibb.co/rHqsFjh/project2.jpg" alt="Project 2">
+          <div class="md:w-1/2 p-6">
+            <h3 class="text-2xl font-semibold mb-2">Local Heritage Writing</h3>
+            <p class="mb-4 text-gray-600">Published articles on historical sites in Alwar to foster cultural appreciation.</p>
+            <a href="#" class="text-yellow-500 font-medium hover:underline">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="md:flex bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-xl transition">
+          <img class="md:w-1/2 object-cover" src="https://i.ibb.co/ZgSnwFv/project3.jpg" alt="Project 3">
+          <div class="md:w-1/2 p-6">
+            <h3 class="text-2xl font-semibold mb-2">Mindfulness Journaling</h3>
+            <p class="mb-4 text-gray-600">Led journaling workshops for teens focused on identity, emotional wellbeing, and creativity.</p>
+            <a href="#" class="text-yellow-500 font-medium hover:underline">Workshop Details →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE with Timeline -->
+  <section id="work" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-10 text-center">Work Experience</h2>
+      <ol class="relative border-l border-yellow-400 ml-4">
+        <li class="mb-10 ml-6">
+          <span class="absolute w-4 h-4 bg-yellow-500 rounded-full -left-2.5 top-1.5"></span>
+          <h3 class="text-xl font-semibold">Family Fellow — UPenn</h3>
+          <time class="block mb-2 text-sm text-gray-500">2024–Present</time>
+          <p class="text-gray-700">Supporting education-focused families and designing outreach initiatives.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span class="absolute w-4 h-4 bg-yellow-500 rounded-full -left-2.5 top-1.5"></span>
+          <h3 class="text-xl font-semibold">Primary Teacher — GD Global School</h3>
+          <time class="block mb-2 text-sm text-gray-500">2023–2024</time>
+          <p class="text-gray-700">Led history and civics instruction with innovative, learner-centered methods.</p>
+        </li>
+        <li class="ml-6">
+          <span class="absolute w-4 h-4 bg-yellow-500 rounded-full -left-2.5 top-1.5"></span>
+          <h3 class="text-xl font-semibold">Freelance Educator</h3>
+          <time class="block mb-2 text-sm text-gray-500">2021–2022</time>
+          <p class="text-gray-700">Conducted journaling and history workshops focused on mindfulness and identity.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  
+  <!-- CERTIFICATIONS as Grid Cards -->
+  <section id="certifications" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-10">Certifications</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold">Museum Teaching & Learning</h4>
+          <p class="text-gray-600">Penn Museum</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold">Pyramid of Giza</h4>
+          <p class="text-gray-600">HarvardX</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-semibold">Classroom Interaction</h4>
+          <p class="text-gray-600">PennX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- OTHER EXPERIENCES using Horizontal Cards -->
+  <section id="other" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-10">Other Experiences</h2>
+      <div class="space-y-6">
+        <div class="flex items-start bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="text-yellow-500 text-2xl mr-4">🚆</div>
+          <div>
+            <h4 class="text-lg font-semibold">Jagriti Yatra</h4>
+            <p class="text-gray-600">Traveled across India to explore social entrepreneurship and grassroots change.</p>
+          </div>
+        </div>
+        <div class="flex items-start bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="text-yellow-500 text-2xl mr-4">🤝</div>
+          <div>
+            <h4 class="text-lg font-semibold">Helping Hands NGO</h4>
+            <p class="text-gray-600">Organized art-based hygiene education and taught underprivileged students.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
+      <form class="space-y-4">
+        <input class="w-full px-4 py-2 border rounded" type="text" placeholder="Your Name" required/>
+        <input class="w-full px-4 py-2 border rounded" type="email" placeholder="Your Email" required/>
+        <textarea class="w-full px-4 py-2 border rounded" rows="4" placeholder="Your Message" required></textarea>
+        <button class="px-6 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-500 border-t">
+    &copy; 2025 Ruchi Arora. Made with ❤️ using Tailwind CSS.
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    // Intersection Observer for timeline animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            // Optional: stop observing after animation
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
+
+</body>
+</html>
